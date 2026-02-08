@@ -17,5 +17,14 @@ public class GlobalExceptionHandler {
                 "message", ex.getMessage()
         );
     }
+
+    @ExceptionHandler(DuplicateVoteException.class)
+    @ResponseStatus(HttpStatus.CONFLICT)
+    public Map<String, Object> handleDuplicateVote(DuplicateVoteException ex) {
+        return Map.of(
+                "error", "DUPLICATE_VOTE",
+                "message", ex.getMessage()
+        );
+    }
 }
 
