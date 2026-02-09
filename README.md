@@ -26,24 +26,20 @@ El proyecto sigue una **arquitectura en capas (N-Layer Architecture)**, con una 
 - Expone los endpoints REST.
 - Valida entradas básicas (request params / body).
 - No contiene lógica de negocio.
-- Ejemplo: `CountryController`, `VoteController`, `FavoriteController`.
 
 ### 2. Service
 - Contiene la lógica de negocio.
 - Aplica reglas del dominio (por ejemplo: un solo voto por email).
 - Orquesta llamadas a repositorios y servicios externos.
-- Ejemplo: `VoteService`, `FavoriteService`, `RestCountriesProxyService`.
 
 ### 3. Repository
 - Acceso a datos usando Spring Data JPA.
 - Define consultas a la base de datos.
 - No contiene lógica de negocio.
-- Ejemplo: `UserVoteRepository`.
 
 ### 4. Domain / Entity
 - Representa el modelo del dominio.
 - Define las entidades JPA que se persisten en base de datos.
-- Ejemplo: `UserVote`.
 
 ### 5. Integration (External APIs)
 - Encapsula la comunicación con APIs externas.
@@ -113,7 +109,7 @@ Se utiliza principalmente para:
 ### Votes
 
 - Crear un voto  
-  `POST /api/votes`
+  `POST /api/votos`
 
   Ejemplo de body:
   ```json
